@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<project name="xmlcatalog" basedir="schemas" default="build">
+  <property name="skip.existing" value="true"/>
+
+  <macrodef name="get-and-unzip">
+    <attribute name="src"/>
+    <attribute name="dest"/>
+
+    <sequential>
+      <local name="basename"/>
+      <basename property="basename" file="@{src}"/>
+
+      <get src="@{src}"
+           dest="${java.io.tmpdir}"
+           verbose="true"
+           skipexisting="${skip.existing}"/>
+
+      <mkdir dir="@{dest}"/>
+
+      <unzip src="${java.io.tmpdir}/${basename}"
+             dest="@{dest}"/>
+    </sequential>
+  </macrodef>
+
+  <property name="catalog.dir" location="${basedir}/catalog"/>
+  <property name="dita.dir" location="${basedir}/dita"/>
+  <property name="docbook.dir" location="${basedir}/docbook"/>
+  <property name="html4.dir" location="${basedir}/html4"/>
+  <property name="xhtml.dir" location="${basedir}/xhtml"/>
+  <property name="maven.dir" location="${basedir}/maven"/>
+  <property name="j2ee.dir" location="${basedir}/j2ee"/>
+
+  <target name="catalog">
+    <get dest="${catalog.dir}"
+         verbose="true"
+         skipexisting="${skip.existing}">
+       <url url="http://www.oasis-open.org/committees/entity/release/1.0/catalog.dtd"/>
+       <url url="http://www.oasis-open.org/committees/entity/release/1.0/catalog.xsd"/>
+       <url url="http://www.oasis-open.org/committees/entity/release/1.0/catalog.rng"/>
+    </get>
+  </target>
+
+  <target name="dita">
+    <get-and-unzip
+      src="http://docs.oasis-open.org/dita/v1.2/os/DITA1.2-dtds.zip"
+      dest="${dita.dir}"/>
+
+    <move file="${dita.dir}/dtd1.2"
+          tofile="${dita.dir}/dita-1.2"/>
+
+    <get-and-unzip
+      src="http://docs.oasis-open.org/dita/dita/v1.3/csprd01/part3-all-inclusive/dita-v1.3-csprd01-part3-all-inclusive-grammars.zip"
+      dest="${basedir}/dita"/>
+
+    <move file="${dita.dir}/dita-v1.3-csprd01-part3-all-inclusive-grammars"
+          tofile="${dita.dir}/dita-1.3"/>
+  </target>
+
+  <target name="docbook">
+    <get-and-unzip
+      src="http://www.docbook.org/xml/5.0/docbook-5.0.zip"
+      dest="${docbook.dir}"/>
+
+    <get-and-unzip
+      src="http://www.docbook.org/xml/4.5/docbook-xml-4.5.zip"
+      dest="${docbook.dir}/docbook-4.5"/>
+  </target>
+
+  <target name="html4">
+    <get dest="${html4.dir}"
+         verbose="true"
+         skipexisting="${skip.existing}">
+       <url url="http://www.w3.org/TR/html4/strict.dtd"/>
+       <url url="http://www.w3.org/TR/html4/loose.dtd"/>
+       <url url="http://www.w3.org/TR/html4/frameset.dtd"/>
+       <url url="http://www.w3.org/TR/html4/HTMLlat1.ent"/>
+       <url url="http://www.w3.org/TR/html4/HTMLspecial.ent"/>
+       <url url="http://www.w3.org/TR/html4/HTMLsymbol.ent"/>
+    </get>
+  </target>
+
+  <target name="xhtml">
+    <get dest="${xhtml.dir}"
+         verbose="true"
+         skipexisting="${skip.existing}">
+       <url url="http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"/>
+       <url url="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
+       <url url="http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd"/>
+       <url url="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"/>
+       <url url="http://www.w3.org/TR/xhtml1/DTD/xhtml-lat1.ent"/>
+       <url url="http://www.w3.org/TR/xhtml1/DTD/xhtml-special.ent"/>
+       <url url="http://www.w3.org/TR/xhtml1/DTD/xhtml-symbol.ent"/>
+    </get>
+  </target>
+
+  <target name="maven">
+    <get dest="${maven.dir}"
+         verbose="true"
+         skipexisting="${skip.existing}">
+      <url url="http://maven.apache.org/xsd/maven-4.0.0.xsd"/>
+      <url url="https://maven.apache.org/xsd/maven-project-3.0.0.xsd"/>
+    </get>
+  </target>
+
+  <target name="j2ee">
+    <get dest="${j2ee.dir}"
+         verbose="true"
+         skipexisting="${skip.existing}">
+      <url url="http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/j2ee/web-app_2_4.xsd"/>
+      <url url="http://www.oracle.com/webfolder/technetwork/jsc/xml/ns/javaee/web-app_2_5.xsd"/>
+    </get>
+  </target>
+
+  <target name="clean">
+    <delete includeemptydirs="true" dir="${basedir}" includes="**/*"/>
+  </target>
+
+  <target name="build"
+    depends="catalog, dita, docbook, xhtml, html4, maven, j2ee"/>
+</project>
