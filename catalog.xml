@@ -16,7 +16,7 @@
   </group>
 
   <group id="dita" xml:base="schemas/dita/">
-    <!-- <nextCatalog catalog="dita-1.3/catalog.xml"/> -->
+    <nextCatalog catalog="dita-1.3/catalog.xml"/>
     <nextCatalog catalog="dita-1.2/catalog-dita.xml"/>
   </group>
 
@@ -56,5 +56,14 @@
             uri="web-app_2_5.xsd"/>
 
     <uri name="http://java.sun.com/xml/ns/javaee" uri="web-app_2_5.xsd"/>
+  </group>
+
+  <group id="xslt" xml:base="schemas/xslt/">
+    <uri name="urn:oasis:names:tc:xslt:rng:xslt.rng:1.0"
+         uri="rng/xslt10.rng"/>
+    <uri name="urn:oasis:names:tc:xslt:rng:xslt.rng:2.0"
+         uri="rng/xslt20.rng"/>
+    <uri name="urn:oasis:names:tc:xslt:rng:xslt.rng:3.0"
+         uri="rng/xslt30.rng"/>
   </group>
 </catalog>
