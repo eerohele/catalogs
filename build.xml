@@ -36,14 +36,12 @@
     </sequential>
   </macrodef>
 
-  <macrodef name="rnc-to-rng">
+  <macrodef name="trang">
     <attribute name="src"/>
     <attribute name="dest"/>
 
     <sequential>
       <java jar="${trang.jar}" fork="true">
-          <arg line="-I rnc"/>
-          <arg line="-O rng"/>
           <arg value="@{src}"/>
           <arg value="@{dest}"/>
       </java>
@@ -151,21 +149,8 @@
   </target>
 
   <target name="trang-xslt">
-    <rnc-to-rng
-      src="${xslt.dir}/rnc/xslt.rnc"
-      dest="${xslt.dir}/rng/xslt.rng"/>
-
-    <rnc-to-rng
-      src="${xslt.dir}/rnc/1.0/xslt10.rnc"
-      dest="${xslt.dir}/rng/xslt10.rng"/>
-
-    <rnc-to-rng
-      src="${xslt.dir}/rnc/2.0/xslt20.rnc"
-      dest="${xslt.dir}/rng/xslt20.rng"/>
-
-    <rnc-to-rng
-      src="${xslt.dir}/rnc/3.0/xslt30.rnc"
-      dest="${xslt.dir}/rng/xslt30.rng"/>
+    <trang src="${xslt.dir}/rnc/xslt.rnc"
+           dest="${xslt.dir}/rng/xslt.rng"/>
   </target>
 
   <target name="clean">
