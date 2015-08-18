@@ -8,11 +8,11 @@ schemas.
 1. Install Ant and Ivy if not already installed.
 2. Run:
 
-        ```
-        $ git clone https://github.com/eerohele/markup-schemas.git
-        $ cd markup-schemas
-        $ ant
-        ```
+    ```bash
+    $ git clone https://github.com/eerohele/markup-schemas.git
+    $ cd markup-schemas
+    $ ant
+    ```
 
 3. (*Optional*) Set your [`XML_CATALOG_FILES`][xml-catalog-files] environment
    variable to point to the `catalog.xml` file in the repo.
