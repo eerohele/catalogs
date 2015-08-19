@@ -66,6 +66,31 @@
     </get>
   </target>
 
+  <target name="dita-schematron">
+    <get-and-unzip
+      src="https://github.com/jelovirt/dita-schematron/archive/master.zip"
+      dest="${dita.dir}"/>
+
+    <java classname="org.apache.tools.ant.launch.Launcher" fork="true" failonerror="true">
+      <jvmarg value="-Dant.library.dir=${ant.home}/lib"/>
+
+      <classpath>
+        <pathelement location="${ant.home}/lib/ant-launcher.jar"/>
+      </classpath>
+
+      <arg line="-lib ${basedir}/lib"/>
+      <arg line="-buildfile ${dita.dir}/dita-schematron-master/build.xml"/>
+      <arg line="dist.schema"/>
+
+      <sysproperty key="release.version" value="1.0.0"/>
+    </java>
+
+    <unzip src="${dita.dir}/dita-schematron-master/dist/dita-schematron_1.0.0.zip"
+           dest="${dita.dir}/schematron"/>
+
+    <delete dir="${dita.dir}/dita-schematron-master"/>
+  </target>
+
   <target name="dita">
     <get-and-unzip
       src="http://docs.oasis-open.org/dita/v1.2/os/DITA1.2-dtds.zip"
@@ -160,5 +185,14 @@
   </target>
 
   <target name="build"
-    depends="catalog, dita, docbook, xhtml, html4, maven, j2ee, xslt"/>
+    depends="catalog,
+             dita,
+             dita-schematron,
+             docbook,
+             xhtml,
+             html4,
+             maven,
+             j2ee,
+             xslt
+    "/>
 </project>

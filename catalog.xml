@@ -18,6 +18,23 @@
   <group id="dita" xml:base="schemas/dita/">
     <nextCatalog catalog="dita-1.3/catalog.xml"/>
     <nextCatalog catalog="dita-1.2/catalog-dita.xml"/>
+
+    <system systemId="dita-1.1-for-xslt1.sch"
+            uri="schematron/dita-1.1-for-xslt1.sch"/>
+    <uri name="dita-1.1-for-xslt1.sch"
+         uri="schematron/dita-1.1-for-xslt1.sch"/>
+    <system systemId="dita-1.1-for-xslt2.sch"
+            uri="schematron/dita-1.1-for-xslt2.sch"/>
+    <uri name="dita-1.1-for-xslt2.sch"
+         uri="schematron/dita-1.1-for-xslt2.sch"/>
+    <system systemId="dita-1.2-for-xslt1.sch"
+            uri="schematron/dita-1.2-for-xslt1.sch"/>
+    <uri name="dita-1.2-for-xslt1.sch"
+         uri="schematron/dita-1.2-for-xslt1.sch"/>
+    <system systemId="dita-1.2-for-xslt2.sch"
+            uri="schematron/dita-1.2-for-xslt2.sch"/>
+    <uri name="dita-1.2-for-xslt2.sch"
+         uri="schematron/dita-1.2-for-xslt2.sch"/>
   </group>
 
   <group id="xhtml" xml:base="schemas/xhtml/">
