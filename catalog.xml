@@ -45,7 +45,7 @@
     <public publicId="-//W3C//DTD XHTML 1.0 Frameset//EN"
             uri="xhtml1-frameset.dtd"/>
     <public publicId="-//W3C//DTD XHTML 1.1//EN"
-            uri="http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd"/>
+            uri="xhtml11.dtd"/>
   </group>
 
   <group id="html4" xml:base="schemas/html4/">
