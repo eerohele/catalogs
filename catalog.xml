@@ -60,10 +60,14 @@
   <group id="maven" xml:base="schemas/maven/">
     <system systemId="maven-4.0.0.xsd" uri="maven-4.0.0.xsd"/>
 
+    <system systemId="http://maven.apache.org/maven-v4_0_0.xsd"
+            uri="maven-4.0.0.xsd"/>
+
     <system systemId="http://maven.apache.org/xsd/maven-4.0.0.xsd"
             uri="maven-4.0.0.xsd"/>
 
     <uri name="http://maven.apache.org/POM/4.0.0" uri="maven-4.0.0.xsd"/>
+    <uri name="http://maven.apache.org/xsd/maven-4.0.0.xsd" uri="maven-4.0.0.xsd"/>
   </group>
 
   <group id="j2ee" xml:base="schemas/j2ee/">
