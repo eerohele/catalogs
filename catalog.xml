@@ -19,6 +19,7 @@
     <nextCatalog catalog="dita-1.3/catalog.xml"/>
     <nextCatalog catalog="dita-1.2/dtd/catalog-dita.xml"/>
     <nextCatalog catalog="dita-1.2/schema/catalog-dita.xml"/>
+    <nextCatalog catalog="dita-1.2/org.dita-ng.doctypes/catalog-rng.xml"/>
 
     <system systemId="dita-1.1-for-xslt1.sch"
             uri="schematron/dita-1.1-for-xslt1.sch"/>
