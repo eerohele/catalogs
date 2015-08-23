@@ -97,7 +97,17 @@
       dest="${dita.dir}"/>
 
     <move file="${dita.dir}/dtd1.2"
-          tofile="${dita.dir}/dita-1.2"/>
+          tofile="${dita.dir}/dita-1.2/dtd"/>
+
+    <get-and-unzip
+      src="http://docs.oasis-open.org/dita/v1.2/os/DITA1.2-xsds.zip"
+      dest="${dita.dir}"/>
+
+    <move file="${dita.dir}/xsd1.2"
+          tofile="${dita.dir}/dita-1.2/schema"/>
+
+    <move file="${dita.dir}/xsd1.2-url"
+          tofile="${dita.dir}/dita-1.2/schema-url"/>
 
     <get-and-unzip
       src="http://docs.oasis-open.org/dita/dita/v1.3/csprd01/part3-all-inclusive/dita-v1.3-csprd01-part3-all-inclusive-grammars.zip"
