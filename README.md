@@ -9,8 +9,8 @@ schemas.
 2. Run:
 
     ```bash
-    $ git clone https://github.com/eerohele/markup-schemas.git
-    $ cd markup-schemas
+    $ git clone https://github.com/eerohele/catalogs.git
+    $ cd catalogs
     $ ant
     ```
 
