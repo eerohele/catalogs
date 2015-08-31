@@ -5,7 +5,7 @@ schemas.
 
 ## Installation
 
-1. Install Ant and Ivy if not already installed.
+1. Install Ant if not already installed.
 2. Run:
 
     ```bash
