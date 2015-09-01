@@ -59,6 +59,17 @@
             uri="frameset.dtd"/>
   </group>
 
+  <group id="svg" xml:base="schemas/svg/">
+    <public publicId="-//W3C//DTD SVG 1.1//EN"
+            uri="svg11.dtd"/>
+    <public publicId="-//W3C//DTD SVG 1.0//EN"
+            uri="svg10.dtd"/>
+    <public publicId="-//W3C//DTD SVG 1.1 Basic//EN"
+            uri="svg11-basic.dtd"/>
+    <public publicId="-//W3C//DTD SVG 1.1 Tiny//EN"
+            uri="svg11-tiny.dtd"/>
+  </group>
+
   <group id="maven" xml:base="schemas/maven/">
     <system systemId="maven-4.0.0.xsd" uri="maven-4.0.0.xsd"/>
 

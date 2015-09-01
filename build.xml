@@ -12,6 +12,7 @@
   <property name="docbook.dir" location="${schemas.dir}/docbook"/>
   <property name="html4.dir" location="${schemas.dir}/html4"/>
   <property name="xhtml.dir" location="${schemas.dir}/xhtml"/>
+  <property name="svg.dir" location="${schemas.dir}/svg"/>
   <property name="maven.dir" location="${schemas.dir}/maven"/>
   <property name="j2ee.dir" location="${schemas.dir}/j2ee"/>
   <property name="xslt.dir" location="${schemas.dir}/xslt"/>
@@ -150,6 +151,64 @@
     </get>
   </target>
 
+  <target name="svg">
+    <get dest="${svg.dir}"
+         verbose="true"
+         skipexisting="${skip.existing}">
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"/>
+      <url url="http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic.dtd"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny.dtd"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-animation.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-animevents-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-basic-clip.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-basic-filter.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-basic-font.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-basic-graphics-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-basic-paint-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-basic-structure.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-basic-text.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-clip.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-conditional.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-container-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-core-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-cursor.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-docevents-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-datatypes.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-extensibility.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-extresources-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-filter.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-font.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-framework.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-gradient.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-graphevents-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-graphics-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-hyperlink.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-image.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-marker.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-mask.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-opacity-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-paint-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-pattern.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-profile.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-qname.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-script.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-shape.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-structure.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-style.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-text.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-view.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-viewport-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg-xlink-attrib.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-attribs.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic-attribs.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-basic-model.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-model.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny-attribs.mod"/>
+      <url url="http://www.w3.org/Graphics/SVG/1.1/DTD/svg11-tiny-model.mod"/>
+    </get>
+  </target>
+
   <target name="maven">
     <get dest="${maven.dir}"
          verbose="true"
@@ -240,6 +299,7 @@
              docbook,
              xhtml,
              html4,
+             svg,
              maven,
              j2ee,
              xslt
