@@ -20,6 +20,7 @@
   <macrodef name="get-and-unzip">
     <attribute name="src"/>
     <attribute name="dest"/>
+    <attribute name="skipexisting" default="${skip.existing}"/>
 
     <sequential>
       <local name="basename"/>
@@ -28,7 +29,7 @@
       <get src="@{src}"
            dest="${java.io.tmpdir}"
            verbose="true"
-           skipexisting="${skip.existing}"/>
+           skipexisting="@{skipexisting}"/>
 
       <mkdir dir="@{dest}"/>
 
@@ -61,6 +62,7 @@
 
   <target name="dita-schematron">
     <get-and-unzip
+      skipexisting="false"
       src="https://github.com/jelovirt/dita-schematron/archive/master.zip"
       dest="${dita.dir}"/>
 
@@ -231,6 +233,7 @@
 
   <target name="xslt" depends="ivy">
     <get-and-unzip
+      skipexisting="false"
       src="https://github.com/ndw/xslt-relax-ng/archive/master.zip"
       dest="${xslt.dir}"/>
 
