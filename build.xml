@@ -60,7 +60,7 @@
     </get>
   </target>
 
-  <target name="dita-schematron">
+  <target name="dita-schematron" depends="ivy">
     <get-and-unzip
       skipexisting="false"
       src="https://github.com/jelovirt/dita-schematron/archive/master.zip"
