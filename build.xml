@@ -105,10 +105,6 @@
           tofile="${dita.dir}/dita-1.2/schema-url"/>
 
     <get-and-unzip
-      src="https://dita-ng.googlecode.com/files/dita-ng20130417.zip"
-      dest="${dita.dir}/dita-1.2"/>
-
-    <get-and-unzip
       src="https://docs.oasis-open.org/dita/dita/v1.3/os/part3-all-inclusive/dita-v1.3-os-part3-all-inclusive-grammars.zip"
       dest="${schemas.dir}/dita"/>
 
