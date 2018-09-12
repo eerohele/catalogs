@@ -114,11 +114,11 @@
 
   <target name="docbook">
     <get-and-unzip
-      src="http://www.docbook.org/xml/5.0/docbook-5.0.zip"
+      src="https://www.docbook.org/xml/5.0/docbook-5.0.zip"
       dest="${docbook.dir}"/>
 
     <get-and-unzip
-      src="http://www.docbook.org/xml/4.5/docbook-xml-4.5.zip"
+      src="https://www.docbook.org/xml/4.5/docbook-xml-4.5.zip"
       dest="${docbook.dir}/docbook-4.5"/>
   </target>
 
